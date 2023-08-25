@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 
 // imports
 import 'package:picky_lk/views/home_screen.dart';
-import 'package:picky_lk/views/login_screen.dart';
+import 'package:picky_lk/views/auth_screens/login_screen.dart';
 
 class RouteHelper {
   // Custom paths for the routes

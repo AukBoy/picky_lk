@@ -5,9 +5,36 @@ import 'package:flutter/material.dart';
 // Files
 import '/utils/image_paths.dart';
 import '/utils/color_resources.dart';
+import 'main_screens/widgets/home_widget.dart';
+import 'main_screens/widgets/notification_widget.dart';
+import 'main_screens/widgets/profile_widget.dart';
+import 'main_screens/widgets/tickets_widget.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  int _page = 0;
+
+  // List of widgets to be displayed for each navigation item
+  final List<Widget> _pageWidgets = [
+    // Widget for Home
+
+    const HomeWidget(),
+
+    // Widget for Tickets
+    const TicketsWidget(),
+
+    // Widget for Notifications
+    const NotificationsWidget(),
+
+    // Widget for Profile
+    const ProfileWidget(),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +43,7 @@ class HomeScreen extends StatelessWidget {
         title: const Text('PICKY.LK'),
         // Add any additional AppBar properties you need
       ),
-      body: Container(color: ColorResources.white),
+      body: _pageWidgets[_page],
       bottomNavigationBar: CurvedNavigationBar(
         backgroundColor: ColorResources.white,
         color: ColorResources.darkBlue,
@@ -26,7 +53,12 @@ class HomeScreen extends StatelessWidget {
           Icon(Icons.notifications, size: 30, color: ColorResources.white),
           Icon(Icons.person, size: 30, color: ColorResources.white),
         ],
-        onTap: (index) {},
+        onTap: (index) {
+          setState(() {
+            _page = index;
+          });
+        },
+        letIndexChange: (index) => true,
       ),
     );
   }
