@@ -5,10 +5,10 @@ import 'package:flutter/material.dart';
 // Files
 import '/utils/image_paths.dart';
 import '/utils/color_resources.dart';
-import 'main_screens/widgets/home_widget.dart';
-import 'main_screens/widgets/notification_widget.dart';
-import 'main_screens/widgets/profile_widget.dart';
-import 'main_screens/widgets/tickets_widget.dart';
+import 'main_screens//home_widget.dart';
+import 'main_screens//notification_widget.dart';
+import 'main_screens//profile_widget.dart';
+import 'main_screens//tickets_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
